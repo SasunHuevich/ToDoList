@@ -1,0 +1,11 @@
+{
+	"id": "to-do-list-plugin",
+	"name": "ToDoList",
+	"version": "1.0.0",
+	"minAppVersion": "1.0.0",
+	"description": "Plugin for manage ToDos.",
+	"author": "Sasun Huevich",
+	"authorUrl": "https://github.com/SasunHuevich",
+	"helpUrl": "",
+	"isDesktopOnly": false
+}
