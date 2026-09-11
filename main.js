@@ -3,8 +3,8 @@ var obsidian = require('obsidian')
 const { TFile } = require('obsidian');
 
 const MARKER_PLUGIN_IS_ON = '%% ToDoList %%'
-const PREFIXES_OPEN = ['- [ ] ', '* [ ] ']
-const PREFIXES_COMPLETED = ['- [x] ', '- [X] ', '* [x] ', '* [X] ']
+const PREFIXES_OPEN = ['- [ ]', '* [ ]']
+const PREFIXES_COMPLETED = ['- [x]', '- [X]', '* [x]', '* [X]']
 const HEADER_OPEN = '### Open'
 const HEADER_COMPLETE = '### Completed'
 
@@ -30,20 +30,20 @@ class ToDoList extends obsidian.Plugin {
 
             for (const prefix of PREFIXES_OPEN) {
                 if (trimmed.startsWith(prefix)) {
-                    openTodo.push(trimmed);
+                    openTodo.push(line);
                     continue outerLoop;
                 }
             }
 
             for (const prefix of PREFIXES_COMPLETED) {
                 if (trimmed.startsWith(prefix)) {
-                    completedTodo.push(trimmed);
+                    completedTodo.push(line);
                     continue outerLoop;
                 }
             }
             
             if (trimmed != '' && trimmed != HEADER_OPEN && trimmed != HEADER_COMPLETE) {
-                otherLines.push(trimmed);
+                otherLines.push(line);
             }
             
         }
